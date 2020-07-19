@@ -20,5 +20,6 @@ let questions = [
     "I play that game well.",
     "PSG",
     "b"),
-  new Question()
+  new Question(
+  )
 ]
