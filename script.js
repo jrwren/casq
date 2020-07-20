@@ -292,4 +292,22 @@ let questions = [
     "a")
 ]
 
-document.getElementById('test-table')
+
+
+let start = document.getElementById('start')
+let q = document.getElementById("q")
+let a = document.getElementById("a")
+let b = document.getElementById("b")
+
+
+start.onclick = function() {
+  start.value = "restart"
+  q.visible = true
+  var i = 0;
+  let start = function() {
+    q.value = questions[i].q
+    a.value = questions[i].a
+    b.value = questions[i].b
+  }
+  start()
+}
