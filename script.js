@@ -306,18 +306,20 @@ let score = document.getElementById("score")
 
 start.onclick = function() {
   start.firstChild.data = "restart"
-  test.visible = true
-  score.visible = false
-  var i = -1;
+  test.style.visibility = "visible"
+  //score.style.visibility = "hidden"
+  var i = 44;
   var ascore, bscore = (0, 0)
   let end = function() {
-    score.visible = true
+    start.firstChild.data = "start"
+    test.style.visibility = "hidden"
+    score.style.visibility = "visible"
     score.firstChild.data = `there were {ascore} and {bscore}`
   }
   let next = function() {
     i++
-    if (i>questions.length) {
-      end()
+    if (i>=questions.length) {
+      return end()
     }
     q.innerText = questions[i].q
     a.innerText = questions[i].a
