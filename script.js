@@ -295,19 +295,41 @@ let questions = [
 
 
 let start = document.getElementById('start')
+let test = document.getElementById("test")
 let q = document.getElementById("q")
 let a = document.getElementById("a")
 let b = document.getElementById("b")
+let bA = document.getElementById("bA")
+let bB = document.getElementById("bB")
+
 
 
 start.onclick = function() {
-  start.value = "restart"
-  q.visible = true
-  var i = 0;
-  let start = function() {
-    q.value = questions[i].q
-    a.value = questions[i].a
-    b.value = questions[i].b
+  start.firstChild.data = "restart"
+  test.visible = true
+  var i = -1;
+  var ascore, bscore = (0, 0)
+  let end = function() {
+    
   }
-  start()
+  let next = function() {
+    i++
+    if (i>questions.length) {
+      end()
+    }
+    q.innerText = questions[i].q
+    a.innerText = questions[i].a
+    b.innerText = questions[i].b
+  }
+  bA.onclick = function() {
+    if (questions[i].point == "a")
+      ascore++
+    next()
+  }
+  bB.onclick = function() {
+    if (questions[i].point == "b")
+      bscore++
+    next()
+  }
+  next()
 }
