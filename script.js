@@ -292,3 +292,4 @@ let questions = [
     "a")
 ]
 
+document.getElementById('test-table')

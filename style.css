@@ -2,7 +2,8 @@
 
 body {
   font-family: helvetica, arial, sans-serif;
-  margin: 2em;
+  margin: auto;
+  width: 70em;
 }
 
 h1 {
