@@ -301,16 +301,18 @@ let a = document.getElementById("a")
 let b = document.getElementById("b")
 let bA = document.getElementById("bA")
 let bB = document.getElementById("bB")
-
+let score = document.getElementById("score")
 
 
 start.onclick = function() {
   start.firstChild.data = "restart"
   test.visible = true
+  score.visible = false
   var i = -1;
   var ascore, bscore = (0, 0)
   let end = function() {
-    
+    score.visible = true
+    score.firstChild.data = `there were {ascore} and {bscore}`
   }
   let next = function() {
     i++
