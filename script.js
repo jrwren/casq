@@ -1,3 +1,5 @@
+"use strict";
+
 class Question {
   constructor(q, a, b, type, point) {
     this.q = q
@@ -293,7 +295,6 @@ let questions = [
 ]
 
 
-
 let start = document.getElementById('start')
 let test = document.getElementById("test")
 let q = document.getElementById("q")
@@ -308,13 +309,13 @@ start.onclick = function() {
   start.firstChild.data = "restart"
   test.style.visibility = "visible"
   //score.style.visibility = "hidden"
-  var i = 44;
-  var ascore, bscore = (0, 0)
+  var i = 44; // TODO: 0
+  var {ascore, bscore} = (0, 0)
   let end = function() {
     start.firstChild.data = "start"
     test.style.visibility = "hidden"
     score.style.visibility = "visible"
-    score.firstChild.data = `there were {ascore} and {bscore}`
+    score.firstChild.data = `there were ${ascore} and ${bscore}`
   }
   let next = function() {
     i++
@@ -326,12 +327,12 @@ start.onclick = function() {
     b.innerText = questions[i].b
   }
   bA.onclick = function() {
-    if (questions[i].point == "a")
+    if (questions[i].point === "a")
       ascore++
     next()
   }
   bB.onclick = function() {
-    if (questions[i].point == "b")
+    if (questions[i].point === "b")
       bscore++
     next()
   }
