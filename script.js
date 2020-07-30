@@ -351,10 +351,10 @@ let bB = document.getElementById("bB");
 let score = document.getElementById("score");
 
 start.onclick = function() {
+  score.firstChild.data = "";
   start.firstChild.data = "restart";
   test.style.visibility = "visible";
-  //score.style.visibility = "hidden"
-  let i = 44; // TODO: 0
+  let i = -1;
   let pmbscore = 0;
   let pmgscore = 0;
   let pvbscore = 0;
@@ -366,8 +366,10 @@ start.onclick = function() {
     test.style.visibility = "hidden";
     score.style.visibility = "visible";
     // TODO: make this prettier.
-    let HoB = pmbscore + pvgscore;
-    let 
+    let HoB = pmbscore + pvbscore;
+    let totalb = pmbscore + pvbscore + psbscore;
+    let totalg = pmgscore + pvgscore + psgscore;
+    let gminusb = totalg = totalb;
     score.firstChild.data = `PMB: ${pmbscore}  PMG: ${pmgscore}  PVB: ${pvbscore}  PVG: ${pvgscore}  
 HoB: ${HoB}
 PSB: ${psbscore}  PSG: ${psgscore}

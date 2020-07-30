@@ -3,7 +3,8 @@
 body {
   font-family: helvetica, arial, sans-serif;
   margin: auto;
-  width: 70em;
+  max-width: 70em;
+  padding: 2em;
 }
 
 h1 {
